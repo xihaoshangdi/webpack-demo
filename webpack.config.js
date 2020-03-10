@@ -1,11 +1,19 @@
-var path = require('path');
-
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const base = require('./webpack.config.base');
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.[contenthash].js'
+  ...base,
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist'
   },
-  plugins: [new HtmlWebpackPlugin()]
+  mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 };

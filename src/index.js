@@ -2,7 +2,7 @@ import './assets/css/index.css';
 import './assets/css/x.scss';
 import './assets/css/y.less';
 import './assets/css/z.styl';
-import imgPath from './assets/img/1.jpg';
+import imgPath from './assets/img/0.jpg';
 
 function addElement(tagElement, container) {
   let element = document.createElement(tagElement);
